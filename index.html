@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+  </head>
+  <body>
+    <script src='/socket.io/socket.io.js'></script>
+    <script>
+      var socket = io();
+
+      var send = function () {
+        var text = document.getElementById('m').value;
+        var pseudo = document.getElementById("p").value;
+        socket.emit('chat message',pseudo + " : " + text + "\n");
+      }
+
+      var receive = function(msg) {
+        var li = document.createElement('li');
+        li.innerText = msg;
+        document.getElementById('messages').appendChild(li);
+      }
+      socket.on('chat message', receive);
+    </script>
+    <div>
+      <div class="zone_saisie">
+          <input id="p" required placeholder="Votre pseudo :"/> <br>
+          <input id="m" required placeholder="Votre message"><br>
+          <button onclick="send()">Envoyer</button>
+      </div>
+      <ul id="messages"></ul>
+     
+    </div>
+    
+  </body>
+</html>
