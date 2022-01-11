@@ -8,10 +8,10 @@ app.get("/", function(req, res){
 
 io.on('connection', function(socket){
     
-    console.log('Utilisateur(s) connecté(s) : ');
+    console.log('Un utilisateur s\'est connecté');
     socket.on('disconnect', function (){
         var user_connected = user_connected - 1;
-        console.log('Utilisateur(s) déconnecté(s) : ');
+        console.log('Un utilisateur s\'est déconnecté');
     })
     socket.on('chat message', function (msg){
         console.log(msg);
