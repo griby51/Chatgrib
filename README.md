@@ -30,4 +30,4 @@ Pour utiliser cette ppalication vous aurez besoins :
 
 -D'executer node server.js
 
-Pour vous connectez utilisez votre ip suivis de :3000.
+Pour vous connectez utilisez votre ip suivis de ":3000".
