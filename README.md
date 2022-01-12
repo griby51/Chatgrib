@@ -14,6 +14,8 @@ For use this application, you must :
 
 -Execute : node server.js
 
+-Execute : npm install lowdb@1.0.0
+
 The port is 3000
 
 ------FR------
@@ -28,6 +30,8 @@ Pour utiliser cette ppalication vous aurez besoins :
 
 -D'executer : npm install socket.io
 
--D'executer node server.js
+-D'executer : node server.js
+
+-D'excuter : npm install lowdb@1.0.0
 
 Pour vous connectez utilisez votre ip suivis de ":3000".
