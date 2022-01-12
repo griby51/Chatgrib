@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Socket.IO chat</title>
+    <title>Chatgrib</title>
   </head>
   <body>
     <script src='/socket.io/socket.io.js'></script>
@@ -11,8 +11,10 @@
       var send = function () {
         var text = document.getElementById('m').value;
         var pseudo = document.getElementById("p").value;
-        socket.emit('chat message',pseudo + " : " + text + "\n");
-        socket.emit('log', {author: pseudo, textdumsg: text})
+        var d = new Date();
+        var hours = d.getHours() + ":" + d.getMinutes();
+        socket.emit('chat message',hours + ":\n" +pseudo + " : " + text + "\n\n");
+        socket.emit('log', {author: pseudo, textdumsg: text, hour: hours})
       }
 
       var receive = function(msg) {
@@ -27,7 +29,7 @@
       <div class="zone_saisie">
           <input id="p" required placeholder="Your pseudo"/>
           <input id="m" required placeholder="Your message">
-          <button onclick="send()">Envoyer</button>
+          <button onclick="send()">Send</button>
       </div>
     </div>
     
