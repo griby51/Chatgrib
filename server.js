@@ -1,3 +1,13 @@
+const fs = require('fs')
+
+//------------Lowdb--------------
+const low = require("lowdb");
+const FileSync = require('lowdb/adapters/FileSync');
+const dbdb = new FileSync("db.json")
+const db = low(dbdb)
+
+db.defaults({message: [], user: []}).write()
+
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
@@ -8,15 +18,19 @@ app.get("/", function(req, res){
 
 io.on('connection', function(socket){
     
-    console.log('Un utilisateur s\'est connecté');
+    console.log('User connected');
     socket.on('disconnect', function (){
-        var user_connected = user_connected - 1;
-        console.log('Un utilisateur s\'est déconnecté');
+        console.log('User disconnected');
     })
     socket.on('chat message', function (msg){
         console.log(msg);
         io.emit('chat message', msg);
     })
+
+    socket.on('log', function(log){
+        db.get("message").push(log).write();
+    })
+    
 
 })
 

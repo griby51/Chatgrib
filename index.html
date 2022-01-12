@@ -12,6 +12,7 @@
         var text = document.getElementById('m').value;
         var pseudo = document.getElementById("p").value;
         socket.emit('chat message',pseudo + " : " + text + "\n");
+        socket.emit('log', {author: pseudo, textdumsg: text})
       }
 
       var receive = function(msg) {
@@ -23,12 +24,11 @@
     </script>
     <div>
       <div class="zone_saisie">
-          <input id="p" required placeholder="Votre pseudo :"/> <br>
+          <input id="p" required placeholder="Votre pseudo"/> <br>
           <input id="m" required placeholder="Votre message"><br>
           <button onclick="send()">Envoyer</button>
       </div>
-      <ul id="messages"></ul>
-     
+      <ul id="messages"></ul> 
     </div>
     
   </body>
