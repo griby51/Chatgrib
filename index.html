@@ -11,8 +11,8 @@
       var send = function () {
         var text = document.getElementById('m').value;
         var pseudo = document.getElementById("p").value;
-        var d = new Date();
-        var hours = d.getHours() + ":" + d.getMinutes();
+        var h = new Date();
+        var hours = h.getHours() + ":" + h.getMinutes();
         socket.emit('chat message',hours + ":\n" +pseudo + " : " + text + "\n\n");
         socket.emit('log', {author: pseudo, textdumsg: text, hour: hours})
       }
