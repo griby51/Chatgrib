@@ -1,37 +1,17 @@
 # Chatgrib
 
------EN-----
+## Introduction
 
-For use this application, you must :
+Hello, this is a basic chat because, I'm beginner, the chat use **nodejs** and module **express**, **socket.io** and **lowdb**.  
 
--Install node.js : https://nodejs.org/en/
+## Before you start
 
--You open terminal in folder "Chatgrib"
+- Install [node.js](https://nodejs.org/en/)
 
--Execute : npm install express
+- Open terminal in folder "Chatgrib"
 
--Execute : npm install soket.io
+- Exuecute this commande `npm install express`, `npm install socket.io` and `npm install lowdb`
 
--Execute : npm install lowdb@1.0.0
+## How to use
 
--Execute : node server.js
-
-The port is 3000
-
-------FR------
-
-Pour utiliser cette ppalication vous aurez besoins :
-
--D'installer Node.js : https://nodejs.org/en/
-
--D'ouvrire le terminal dans le dossier "Chatgrib"
-
--D'executer : npm install express
-
--D'executer : npm install socket.io
-
--D'excuter : npm install lowdb@1.0.0
-
--D'executer : node server.js
-
-Pour vous connectez utilisez votre ip suivis de ":3000".
+For use this program, in the terminal execute `node server`, and in your navigator enter your ip to the port 3000, *in local, ip is localhost or 127.0.0.1*, for exemple in your navigator type **127.0.0.1:3000**
